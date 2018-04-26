@@ -74,5 +74,59 @@ namespace ACMOOP.BLTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CustomerIsValid()
+        {
+            //Arrange
+            var customer = new Customer
+            {
+                LastName = "Cedeno",
+                EmailAddress = "icedeno@unicefusa.org"
+            };
+            var expected = true;
+
+            //Act
+            var actual = customer.Validate();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CustomerEmailIsNotValid()
+        {
+            //Arrange
+            var customer = new Customer
+            {
+                LastName = "Cedeno",
+                EmailAddress = ""
+            };
+            var expected = false;
+
+            //Act
+            var actual = customer.Validate();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CustomerLastNameIsNotValid()
+        {
+            //Arrange
+            var customer = new Customer
+            {
+                LastName = "",
+                EmailAddress = "icedeno@unicefusa.org"
+            };
+            var expected = false;
+
+            //Act
+            var actual = customer.Validate();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
