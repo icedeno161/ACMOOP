@@ -26,8 +26,8 @@ namespace ACMOOP.BL
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
-        public CivicAddress HomeAddress { get; set; }
-        public CivicAddress WorkAddress { get; set; }
+        public Address HomeAddress { get; set; }
+        public Address WorkAddress { get; set; }
         public string FullName
         {
             get

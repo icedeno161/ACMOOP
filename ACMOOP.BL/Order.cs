@@ -28,7 +28,7 @@ namespace ACMOOP.BL
         public int OrderId { get; private set; }
         public int CustomerId { get; set; }
         public DateTimeOffset? OrderDate { get; set; }
-        public CivicAddress ShippingAddress { get; set; }
+        public Address ShippingAddress { get; set; }
         public List<OrderItem> ProductsOrdered { get; set; }
 
         #endregion
