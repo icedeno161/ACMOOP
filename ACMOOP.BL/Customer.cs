@@ -65,25 +65,6 @@ namespace ACMOOP.BL
             return isValid;
         }
 
-        /// <summary>
-        /// Returns the Customer with the provided customer id.
-        /// </summary>
-        /// <param name="customerId">Id of customer to retrieve.</param>
-        /// <returns></returns>
-        public Customer Retrieve(int customerId) => new Customer();
-
-        /// <summary>
-        /// Retrieves a list of all Customers.
-        /// </summary>
-        /// <returns></returns>
-        public List<Customer> Retrieve() => new List<Customer>();
-
-        /// <summary>
-        /// Returns whether the customer was saved successfully.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save() => true;
-
         #endregion
     }
 }

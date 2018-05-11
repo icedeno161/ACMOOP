@@ -33,24 +33,7 @@ namespace ACMOOP.BL
 
         #region Methods
 
-        /// <summary>
-        /// Retrieves the product by product id.
-        /// </summary>
-        /// <param name="productId">id of product to retrieve.</param>
-        /// <returns></returns>
-        public Product Retrieve(int productId) => new Product();
-
-        /// <summary>
-        /// Retrieve a list of products.
-        /// </summary>
-        /// <returns></returns>
-        public List<Product> Retrieve() => new List<Product>();
-
-        /// <summary>
-        /// Returns whether saving is successful.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save() => true;
+        
 
         /// <summary>
         /// Validates whether the Product data is valid.
@@ -64,6 +47,35 @@ namespace ACMOOP.BL
             if (CurrentPrice == null) isValid = false;
 
             return isValid;
+        }
+
+        /// <summary>
+        /// Overrides the Equals method
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            var product = obj as Product;
+
+            return (ProductId == product.ProductId) 
+                && (ProductName == product.ProductName) 
+                && (Description == product.Description) 
+                && (CurrentPrice == product.CurrentPrice);
+        }
+
+        /// <summary>
+        /// Overrides the GetHashCode method.
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return ProductId.GetHashCode() ^ ProductName.GetHashCode() ^ Description.GetHashCode() ^ CurrentPrice.GetHashCode();
         }
 
         #endregion

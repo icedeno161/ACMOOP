@@ -13,7 +13,7 @@ namespace ACMOOP.BL
         public int OrderItemId { get; private set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
-        public int MyProperty { get; set; }
+        public decimal? PurchasePrice { get; set; }
 
         #endregion
     }
